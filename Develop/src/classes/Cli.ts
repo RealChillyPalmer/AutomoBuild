@@ -15,7 +15,7 @@ class Cli {
   exit: boolean = false;
 
   // TODO: Update the constructor to accept Truck and Motorbike objects as well
-  constructor(vehicles: (Car)[]) {
+  constructor(vehicles: (Car)[] | (Truck)[]) {
     this.vehicles = vehicles;
   }
 
@@ -61,14 +61,22 @@ class Cli {
           name: 'vehicleType',
           message: 'Select a vehicle type',
           // TODO: Update the choices array to include Truck and Motorbike
-          choices: ['Car'],
+          choices: ['Car', 'Truck', 'Motorbike'],
         },
       ])
       .then((answers) => {
         if (answers.vehicleType === 'Car') {
           // create a car
           this.createCar();
-        }
+        } else if {
+          (answers.vehicleType === 'Truck') {
+            // create a car
+            this.createTruck();
+         } else {
+          (answers.vehicleType === 'Motorbike') {
+            // create a car
+            this.createMotorbike();
+         }
         // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
       });
   }
